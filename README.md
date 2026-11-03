@@ -241,4 +241,32 @@ Fungsi menu_utama() menampilkan tiga pilihan: Login, Registrasi dan Keluar. Pili
 
 <img width="725" height="94" alt="Screenshot 2026-11-03 185758" src="https://github.com/user-attachments/assets/67c931f9-6bf5-4240-9832-1e795c648a04" />
 
-Bagian akhir main.py berisi pengulangan while True yang memanggil menu_utama() di dalam blok try. Jika menu_utama() selesai (pengguna memilih Keluar), perulangan dihentikan dengan break. Jika terjadi KeyboardInterrupt (Ctrl+C), program menampilkan "Kembali ke menu utama..." dan menjalankan ulang menu utama sehingga program tidak langsung crash.
+Bagian akhir main.py berisi pengulangan while True yang memanggil menu_utama() di dalam blok try. Jika menu_utama() selesai (pengguna memilih Keluar), perulangan dihentikan dengan break. Jika terjadi KeyboardInterrupt (Ctrl+C), program menampilkan "Kembali ke menu utama..." dan menjalankan ulang menu utama sehingga program tidak langsung crash.<BR>
+# DAFTAR PUSTAKA
+
+## Library dan Modul yang Digunakan
+
+| No | Library / Modul | Fungsi dalam Program | Jenis | Sumber |
+| :---- | :---- | :---- | :---- | :---- |
+| 1. | json | Membaca dan menulis data JSON (admin.json, user.json, tiket.json, transaksi.json) | Bawaan Python | [W3Schools - Python JSON](https://www.w3schools.com/python/python_json.asp) |
+| 2. | os | Membersihkan tampilan layar terminal | Bawaan Python | [W3Schools - Python os Module](https://www.w3schools.com/python/ref_module_os.asp) |
+| 3. | time | Mengambil waktu transaksi dan menghitung selisih jam refund | Bawaan Python | [W3Schools - Python time Module](https://www.w3schools.com/python/ref_module_time.asp) |
+| 4. | pwinput | Menyamarkan input password dengan tanda `*` | Pihak ketiga | [PyPI - pwinput](https://pypi.org/project/pwinput/) |
+| 5. | prettytable | Menampilkan data dalam bentuk tabel | Pihak ketiga | [PyPI - prettytable](https://pypi.org/project/prettytable/) |
+
+Library pihak ketiga diinstal dengan perintah:
+
+```
+pip install pwinput prettytable
+```
+
+## Referensi Konsep Python
+
+1. W3Schools. (n.d.). *Python Introduction*. https://www.w3schools.com/python/python_intro.asp
+2. W3Schools. (n.d.). *Python Functions*. https://www.w3schools.com/python/python_functions.asp
+3. W3Schools. (n.d.). *Python JSON*. https://www.w3schools.com/python/python_json.asp
+4. W3Schools. (n.d.). *Python os Module*. https://www.w3schools.com/python/ref_module_os.asp
+5. W3Schools. (n.d.). *Python time Module*. https://www.w3schools.com/python/ref_module_time.asp
+6. W3Schools. (n.d.). *Python PIP*. https://www.w3schools.com/python/python_pip.asp
+7. Sweigart, A. (n.d.). *pwinput*. Python Package Index. https://pypi.org/project/pwinput/
+8. Python Package Index. (n.d.). *prettytable*. https://pypi.org/project/prettytable/
