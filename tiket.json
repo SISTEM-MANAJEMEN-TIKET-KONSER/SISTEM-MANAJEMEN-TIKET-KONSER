@@ -1,0 +1,42 @@
+[
+    {
+        "id": "T001",
+        "nama": "Pukul Setengah Sembilan",
+        "tanggal": "2026-11-15",
+        "lokasi": "Samarinda Convention Hall",
+        "harga": 150000,
+        "kuota tiket": 100
+    },
+    {
+        "id": "T002",
+        "nama": "Kota dalam Kaset",
+        "tanggal": "2026-11-20",
+        "lokasi": "Stadion Segiri",
+        "harga": 200000,
+        "kuota tiket": 150
+    },
+    {
+        "id": "T003",
+        "nama": "Gelombang Pulang",
+        "tanggal": "2026-11-05",
+        "lokasi": "Lapangan Parkir GOR Segiri",
+        "harga": 190000,
+        "kuota tiket": 200
+    },
+    {
+        "id": "T004",
+        "nama": "Gang Kecil Records",
+        "tanggal": "2026-12-12",
+        "lokasi": "GOR Segiri Samarinda",
+        "harga": 175000,
+        "kuota tiket": 120
+    },
+    {
+        "id": "T005",
+        "nama": "Minggu Sore Kolektif",
+        "tanggal": "2026-12-20",
+        "lokasi": "Stadion Segiri",
+        "harga": 300000,
+        "kuota tiket": 151
+    }
+]
