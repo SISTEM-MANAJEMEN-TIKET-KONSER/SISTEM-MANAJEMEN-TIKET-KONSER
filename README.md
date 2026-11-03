@@ -236,3 +236,9 @@ Fungsi menu_user(username) berjalan ketika login sebagai user. Di bagian atas me
 <img width="816" height="373" alt="Screenshot 2026-11-03 185743" src="https://github.com/user-attachments/assets/19058f94-5826-4df0-ba77-1538c63b3ff5" />
 
 Fungsi menu_utama() menampilkan tiga pilihan: Login, Registrasi dan Keluar. Pilihan 1 memanggil login(), pilihan 2 memanggil registrasi(), dan pilihan 3 menampilkan pesan terimakasih lalu menghentikan perulangan. Input selain 1-3 menampilkan "Pilihan tidak valid!". Menu dijalankan dalam perulangan while True sehingga terus tampil sampai pengguna memilih Keluar, dan layar dibersihkan setiap kali menu tampil. Di bagian paling bawah program, pemanggilan menu_utama() dibungkus try-except KeyboardInterrupt agar jika pemgguna menekan Ctrl+C, program tidak berhenti paksa tetapi kembali ke menu utama.
+
+## 22. Program Utama
+
+<img width="725" height="94" alt="Screenshot 2026-11-03 185758" src="https://github.com/user-attachments/assets/67c931f9-6bf5-4240-9832-1e795c648a04" />
+
+Bagian akhir main.py berisi pengulangan while True yang memanggil menu_utama() di dalam blok try. Jika menu_utama() selesai (pengguna memilih Keluar), perulangan dihentikan dengan break. Jika terjadi KeyboardInterrupt (Ctrl+C), program menampilkan "Kembali ke menu utama..." dan menjalankan ulang menu utama sehingga program tidak langsung crash.
