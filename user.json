@@ -1,0 +1,32 @@
+[
+    {
+        "username": "andieanderson",
+        "password": "Andie2001!",
+        "role": "user",
+        "saldo": 429500
+    },
+    {
+        "username": "kathstretford",
+        "password": "Kat1999!",
+        "role": "user",
+        "saldo": 80000
+    },
+    {
+        "username": "alliejames",
+        "password": "Allie2000!",
+        "role": "user",
+        "saldo": 200000
+    },
+    {
+        "username": "georgiayork",
+        "password": "georgia!7",
+        "role": "user",
+        "saldo": 55000
+    },
+    {
+        "username": "laneyboggs",
+        "password": "laney_27!",
+        "role": "user",
+        "saldo": 525000
+    }
+]
