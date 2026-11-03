@@ -2,10 +2,12 @@
 
 ## Anggota & Peran
 
-- Shaina Naila Raihana (2609116090) 
-- Achmad Rozaaq Adiprayitno (2690116098) 
-- Maika Izano Filzan (2609116099) 
-- Firza Aulia Syahlin (26091160107)
+| No | Nama | NIM | Peran |
+| :---- | :---- | :---- | :---- |
+| 1. | Shaina Naila Raihana | 2609116090 | Perancang konsep sistem, programmer (seluruh kode main.py), pembuat flowchart, dan penyusun laporan |
+| 2. | Achmad Rozaaq Adiprayitno | 2609116098 | Pembuat flowchart dan penyusun laporan |
+| 3. | Maika Izano Filzan | 2609116099 | Penyusun laporan |
+| 4. | Firza Aulia Syahlin | 26091160107 | Pembuat flowchart dan penyusun laporan |
 
 # SISTEM MANAJEMEN TIKET KONSER
 
