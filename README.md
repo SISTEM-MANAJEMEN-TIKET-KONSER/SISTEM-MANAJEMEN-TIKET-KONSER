@@ -1,4 +1,4 @@
-<img width="833" height="402" alt="Screenshot 2026-11-03 174204" src="https://github.com/user-attachments/assets/745718ea-0672-41fb-af42-2d986bf7c246" /># KELOMPOK-1-SISTEM-MANAJEMEN-TIKET-KONSER
+# KELOMPOK-1-SISTEM-MANAJEMEN-TIKET-KONSER
 
 ## Anggota & Peran
 
@@ -185,5 +185,58 @@ Fungsi riwayat_transaksi(username) membaca transaksi.json lalu menyaring hanya t
 
 ## 15. Fungsi Laporan Penjualan
 
+<img width="786" height="377" alt="Screenshot 2026-11-03 174354" src="https://github.com/user-attachments/assets/d2c8cdab-43a4-49e6-9d20-82eac0aee6fc" />
+
+<img width="823" height="359" alt="Screenshot 2026-11-03 181354" src="https://github.com/user-attachments/assets/ade9081e-a555-4801-a735-f2f0ab4c3637" />
 
 Fungsi laporan_penjualan() membaca transaksi.json. Transaksi berstatus Refund tidak dihitung sebagai penjualan, tetapi nilai sanksinya dijumlahkan ke total_sanksi. Untuk transaksi lainnya, program mengelompokkan data per nama konser dalam dictionary per_konser (jumlah tiket terjual dan pendapatan) sambil menghitung total transaksi, total tiket, dan total pendapatan. Hasilnya ditampilkan dalam tabel (Nama Konser, Tiket Terjual, Pendapatan) diikuti ringkasan total transaksi, total tiket, sanksi refund, dan total pendapatan (pendapatan penjualan ditambah sanksi refund).
+
+## 16. Fungsi Daftar User
+
+<img width="797" height="289" alt="Screenshot 2026-11-03 185248" src="https://github.com/user-attachments/assets/bb916375-e508-4441-93f7-c2396b7f79e8" />
+
+Fungsi daftar_user() membaca user.json. Jika kosong, tampil "Belum ada user terdaftar". Jika ada, program menampilkan tabel berisi nomor urut, username, dan saldo setiap user.
+
+## 17. Fungsi Hitung Sanksi Refund
+
+<img width="739" height="161" alt="Screenshot 2026-11-03 185307" src="https://github.com/user-attachments/assets/e4850ad4-bc6d-4f25-ab7b-dc1f22b5b7f2" />
+
+Fungsi hitung_sanksi_persen(trx) mengubah waktu pembelian pada transaksi menjadi waktu epoch, lalu menghitung selisih jam antara sekarang dan waktu pembelian. Jika selisih tidak lebih dari BATAS_JAM_REFUND (24 jam), sanksi yang dikenakan adalah SANKSI_CEPAT (5%), jika lebih, SANKSI_LAMBAT (10%). Jika format waktu tidak terbaca, fungsi memakai sanksi 10%.
+
+## 18. Fungsi Refund Tiket
+
+<img width="783" height="388" alt="Screenshot 2026-11-03 185326" src="https://github.com/user-attachments/assets/a3d7aa7b-d9ef-4136-b989-9a3b89f35a76" />
+
+<img width="838" height="374" alt="Screenshot 2026-11-03 185351" src="https://github.com/user-attachments/assets/6b3b6630-d7e9-4fa3-9d10-fff7d38894b3" />
+
+<img width="815" height="303" alt="Screenshot 2026-11-03 185409" src="https://github.com/user-attachments/assets/0de74b97-91e6-4cd1-ab6d-cdde96b91823" />
+
+Fungsi refund_tiket(username) menampilkan tabel transaksi milik user yang berstatus "Berhasil". Jika tidak ada, tampil "Tidak ada transaksi yang bisa direfund". User kemudian memasukkan No Invoice. Program menghitung sanksi (total x persen ÷ 100) dan dana yang dikembalikan (total - sanksi), menampilkan ketiganya, dan meminta konfirmasi (y/n). Jika dikonfirmasi, kuota tiket konser terkait ditambah kembali, saldo user ditambah sebesar dana kembali, dan transaksi diubah menjadi status "Refund" lengkap dengan catatan sanksi_persen, sanksi, dan dikembalikan. Ketiga file JSON disimpan, lalu program menampilkan pesan refund berhasil beserta presentase sanksinya.
+
+## 19. Menu Admin
+
+<img width="697" height="188" alt="Screenshot 2026-11-03 185633" src="https://github.com/user-attachments/assets/980aaac1-32c2-41a6-a5a9-d12fa1e5654a" />
+
+<img width="754" height="303" alt="Screenshot 2026-11-03 185651" src="https://github.com/user-attachments/assets/d659f5b6-a968-4079-97f6-0671766c7a5f" />
+
+Fungsi menu_user(username) berjalan ketika login sebagai user. Di bagian atas menu, program menampilkan nama pengguna dan saldo terkini (diambil dengan ambil_saldo() ). Pilihan yang tersedia adalah 1. lihat Data Tiket, 2. Tambah Tiket, 3. Ubah Data Tiket, 4. Hapus Tiket, 5. Laporan Penjualan, 6. Daftar User, dan 7. Logout. Perulangan while True membuat menu terus tampil sampai admin memilih Logout. Setelah setiap fitur selesai, program meminta admin menekan Enter agar hasil tidak langsung tertimpa menu. Pilihan di luar 1-7 menampilkan "Pilihan tidak valid!".
+
+## 20. Menu USer
+
+<img width="772" height="218" alt="Screenshot 2026-11-03 185706" src="https://github.com/user-attachments/assets/ae07caa2-1fb1-4704-aba7-6c6725f24a26" />
+
+<img width="767" height="278" alt="Screenshot 2026-11-03 185724" src="https://github.com/user-attachments/assets/ba8b4b44-8bf6-412d-b46d-14c40536e497" />
+
+Fungsi menu_user(username) berjalan ketika login sebagai user. Di bagian atas menu, program menampilkan nama pengguna dan saldo terkini (diambil dengan ambil_saldo() ). Pilihan yang tersedia 1. Lihat Data Tiket, 2. Top up, 3. Beli Tiket, 4. Riwayat Transaksi, 5. Refund Tiket, dan 6. Logout. Setiap pilihan memanggil fungsi yang sesuai dan menu terus tampil sampai user memilih Logout. Pilihan di luar 1-6 menampilkan "Pilihan tidak valid!".
+
+## 21. Halaman Menu Utama
+
+<img width="816" height="373" alt="Screenshot 2026-11-03 185743" src="https://github.com/user-attachments/assets/78171bbe-2721-4127-b378-b9dd0bd811e4" />
+
+Fungsi menu_utama() menampilkan tiga pilihan: Login, Registrasi dan Keluar. Pilihan 1 memanggil login(), pilihan 2 memanggil registrasi(), dan pilihan 3 menampilkan pesan terimakasih lalu menghentikan perulangan. Input selain 1-3 menampilkan "Pilihan tidak valid!". Menu dijalankan dalam perulangan while True sehingga terus tampil sampai pengguna memilih Keluar, dan layar dibersihkan setiap kali menu tampil. Di bagian paling bawah program, pemanggilan menu_utama() dibungkus try-except KeyboardInterrupt agar jika pemgguna menekan Ctrl+C, program tidak berhenti paksa tetapi kembali ke menu utama.
+
+## 22. Program Utama
+
+<img width="725" height="94" alt="Screenshot 2026-11-03 185758" src="https://github.com/user-attachments/assets/b2fb187c-5082-4d9b-a1f4-6ebc44be489d" />
+
+Bagian akhir main.py berisi pengulangan while True yang memanggil menu_utama() di dalam blok try. Jika menu_utama() selesai (pengguna memilih Keluar), perulangan dihentikan dengan break. Jika terjadi KeyboardInterrupt (Ctrl+C), program menampilkan "Kembali ke menu utama..." dan menjalankan ulang menu utama sehingga program tidak langsung crash. 
