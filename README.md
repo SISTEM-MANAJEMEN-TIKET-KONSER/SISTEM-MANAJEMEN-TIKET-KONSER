@@ -4,7 +4,7 @@
 
 | No | Nama | NIM | Peran |
 | :---- | :---- | :---- | :---- |
-| 1. | Shaina Naila Raihana | 2609116090 | Perancang konsep sistem, programmer (seluruh kode main.py), pembuat flowchart, dan penyusun laporan |
+| 1. | Shaina Naila Raihana | 2609116090 | Perancang konsep sistem, programmer (seluruh kode main.py), pembuat flowchart, dan penyusun laporan, Pengelola repository GitHub |
 | 2. | Achmad Rozaaq Adiprayitno | 2609116098 | Pembuat flowchart dan penyusun laporan |
 | 3. | Maika Izano Filzan | 2609116099 | Penyusun laporan |
 | 4. | Firza Aulia Syahlin | 26091160107 | Pembuat flowchart dan penyusun laporan |
