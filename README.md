@@ -223,22 +223,10 @@ Fungsi refund_tiket(username) menampilkan tabel transaksi milik user yang bersta
 
 Fungsi menu_user(username) berjalan ketika login sebagai user. Di bagian atas menu, program menampilkan nama pengguna dan saldo terkini (diambil dengan ambil_saldo() ). Pilihan yang tersedia adalah 1. lihat Data Tiket, 2. Tambah Tiket, 3. Ubah Data Tiket, 4. Hapus Tiket, 5. Laporan Penjualan, 6. Daftar User, dan 7. Logout. Perulangan while True membuat menu terus tampil sampai admin memilih Logout. Setelah setiap fitur selesai, program meminta admin menekan Enter agar hasil tidak langsung tertimpa menu. Pilihan di luar 1-7 menampilkan "Pilihan tidak valid!".
 
-## 20. Menu USer
+## 20. Menu User
 
 <img width="772" height="218" alt="Screenshot 2026-11-03 185706" src="https://github.com/user-attachments/assets/ae07caa2-1fb1-4704-aba7-6c6725f24a26" />
 
 <img width="767" height="278" alt="Screenshot 2026-11-03 185724" src="https://github.com/user-attachments/assets/ba8b4b44-8bf6-412d-b46d-14c40536e497" />
 
 Fungsi menu_user(username) berjalan ketika login sebagai user. Di bagian atas menu, program menampilkan nama pengguna dan saldo terkini (diambil dengan ambil_saldo() ). Pilihan yang tersedia 1. Lihat Data Tiket, 2. Top up, 3. Beli Tiket, 4. Riwayat Transaksi, 5. Refund Tiket, dan 6. Logout. Setiap pilihan memanggil fungsi yang sesuai dan menu terus tampil sampai user memilih Logout. Pilihan di luar 1-6 menampilkan "Pilihan tidak valid!".
-
-## 21. Halaman Menu Utama
-
-<img width="816" height="373" alt="Screenshot 2026-11-03 185743" src="https://github.com/user-attachments/assets/78171bbe-2721-4127-b378-b9dd0bd811e4" />
-
-Fungsi menu_utama() menampilkan tiga pilihan: Login, Registrasi dan Keluar. Pilihan 1 memanggil login(), pilihan 2 memanggil registrasi(), dan pilihan 3 menampilkan pesan terimakasih lalu menghentikan perulangan. Input selain 1-3 menampilkan "Pilihan tidak valid!". Menu dijalankan dalam perulangan while True sehingga terus tampil sampai pengguna memilih Keluar, dan layar dibersihkan setiap kali menu tampil. Di bagian paling bawah program, pemanggilan menu_utama() dibungkus try-except KeyboardInterrupt agar jika pemgguna menekan Ctrl+C, program tidak berhenti paksa tetapi kembali ke menu utama.
-
-## 22. Program Utama
-
-<img width="725" height="94" alt="Screenshot 2026-11-03 185758" src="https://github.com/user-attachments/assets/b2fb187c-5082-4d9b-a1f4-6ebc44be489d" />
-
-Bagian akhir main.py berisi pengulangan while True yang memanggil menu_utama() di dalam blok try. Jika menu_utama() selesai (pengguna memilih Keluar), perulangan dihentikan dengan break. Jika terjadi KeyboardInterrupt (Ctrl+C), program menampilkan "Kembali ke menu utama..." dan menjalankan ulang menu utama sehingga program tidak langsung crash. 
