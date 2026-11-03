@@ -230,3 +230,9 @@ Fungsi menu_user(username) berjalan ketika login sebagai user. Di bagian atas me
 <img width="767" height="278" alt="Screenshot 2026-11-03 185724" src="https://github.com/user-attachments/assets/ba8b4b44-8bf6-412d-b46d-14c40536e497" />
 
 Fungsi menu_user(username) berjalan ketika login sebagai user. Di bagian atas menu, program menampilkan nama pengguna dan saldo terkini (diambil dengan ambil_saldo() ). Pilihan yang tersedia 1. Lihat Data Tiket, 2. Top up, 3. Beli Tiket, 4. Riwayat Transaksi, 5. Refund Tiket, dan 6. Logout. Setiap pilihan memanggil fungsi yang sesuai dan menu terus tampil sampai user memilih Logout. Pilihan di luar 1-6 menampilkan "Pilihan tidak valid!".
+
+## 21. Halaman Menu Utama
+
+<img width="816" height="373" alt="Screenshot 2026-11-03 185743" src="https://github.com/user-attachments/assets/19058f94-5826-4df0-ba77-1538c63b3ff5" />
+
+Fungsi menu_utama() menampilkan tiga pilihan: Login, Registrasi dan Keluar. Pilihan 1 memanggil login(), pilihan 2 memanggil registrasi(), dan pilihan 3 menampilkan pesan terimakasih lalu menghentikan perulangan. Input selain 1-3 menampilkan "Pilihan tidak valid!". Menu dijalankan dalam perulangan while True sehingga terus tampil sampai pengguna memilih Keluar, dan layar dibersihkan setiap kali menu tampil. Di bagian paling bawah program, pemanggilan menu_utama() dibungkus try-except KeyboardInterrupt agar jika pemgguna menekan Ctrl+C, program tidak berhenti paksa tetapi kembali ke menu utama.
