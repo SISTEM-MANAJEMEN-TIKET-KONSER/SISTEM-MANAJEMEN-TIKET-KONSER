@@ -1,4 +1,4 @@
-# PA-DDP-KELOMPOK-1-SISTEM-MANAJEMEN-TIKET-KONSER
+# KELOMPOK-1-SISTEM-MANAJEMEN-TIKET-KONSER
 
 ## Anggota & Peran
 
@@ -80,4 +80,24 @@ Flowchart ini menjelaskan alur kerja admin. Menu admin memiliki 7 pilihan (Lihat
 | Admin | Lihat Data Tiket, Tambah Tiket, Ubah Data Tiket, Hapus Tiket, Laporan Penjualan, Daftar User, Logout |
 
 # PENJELASAN FUNGSI DAN OUTPUT PROGRAM
+
+## 1. Penggunaan Library, Modul, dan Konstanta
+
+<img width="749" height="202" alt="Screenshot 2026-11-03 155159" src="https://github.com/user-attachments/assets/244c8612-ccfa-44c7-b860-fd81203ef1fe" />
+
+Di awal program kami menggunakan beberapa library dan modul, yaitu json, os, time, pwinput, dan prettytable. json untuk membaca dan menulis data dalam format JSON. os untuk membersihkan tampilan layar terminal. time untuk mengambil tanggal dan waktu transaksi serta menghitung selisih jam saat refund. pwinput untuk mengubah karakter password menjadi tanda *. prettytable untuk menampilkan data dalam bentuk tabel.
+
+Selain itu, terdapat konstanta FILE_TIKET, FILE_USER, dan FILE_TRANSAKSI sebagai lokasi file penyimpanan, serta konstanta aturan bisnis MAKS_BELI = 4, SANKSI_CEPAT = 5, SANKSI_LAMBAT = 10, dan BATAS_JAM_REFUND = 24. Dengan konstanta ini, aturan dapat diubah di satu tempat tanpa mengubah logika fungsi.
+
+## 2. Fungsi Bersihkan Layar, Baca Data, dan Simpan Data
+
+<img width="623" height="304" alt="Screenshot 2026-11-03 154936" src="https://github.com/user-attachments/assets/21a96e6e-2cab-4389-9674-1f71c3cfb381" />
+
+Fungsi bersihkan_layar() menjalankan perintah cls pada windows atau clear pada sistem lain. Fungsi baca_data(nama_file) membuka file JSON dan mengembalikan list kosong [] agar program tidak error. Fungsi simpan_data(nama_file, data) membuka file dalam mode tulis ( w ) lalu menyimpan data dalam format JSON dengan indentasi 4. Fungsi ini mengembalikan True jika berhasil dan False (disertai pesan "Gagal menyimpan data!") jika gagal, sehingga fungsi lain dapat memastikan data benar benar tersimpan sebelum menampilkan pesan berhasil.
+
+## 3. Fungsi Validasi Password
+
+<img width="508" height="131" alt="Screenshot 2026-11-03 160441" src="https://github.com/user-attachments/assets/fc3fa697-b326-4834-ad3b-e279f5a89965" />
+
+Fungsi validasi_password(password) memeriksa setiap karakter pada password. Variabel angka bernilai True jika ada karakter digit, dan variabel unik bernilai True jika ada karakter yang bukan huruf maupun angka (simbol). Fungsi mengembalikan True hanya jika kedua syarat terpenuhi.
 
