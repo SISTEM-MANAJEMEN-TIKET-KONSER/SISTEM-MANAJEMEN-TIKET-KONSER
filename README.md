@@ -1,4 +1,4 @@
-# KELOMPOK-1-SISTEM-MANAJEMEN-TIKET-KONSER
+<img width="833" height="402" alt="Screenshot 2026-11-03 174204" src="https://github.com/user-attachments/assets/745718ea-0672-41fb-af42-2d986bf7c246" /># KELOMPOK-1-SISTEM-MANAJEMEN-TIKET-KONSER
 
 ## Anggota & Peran
 
@@ -101,3 +101,89 @@ Fungsi bersihkan_layar() menjalankan perintah cls pada windows atau clear pada s
 
 Fungsi validasi_password(password) memeriksa setiap karakter pada password. Variabel angka bernilai True jika ada karakter digit, dan variabel unik bernilai True jika ada karakter yang bukan huruf maupun angka (simbol). Fungsi mengembalikan True hanya jika kedua syarat terpenuhi.
 
+## 4. Fungsi Tampilkan Tiket
+
+<img width="757" height="403" alt="Screenshot 2026-11-03 162937" src="https://github.com/user-attachments/assets/1cd8a213-c5b0-454a-a3fa-cb36addcef7f" />
+
+Fungsi tampilkan_tiket() dipakai oleh admin maupun user. Program membaca tiket.json, jika kosong, tampil pesan "Belum ada tiket" lalu fungsi berhenti. Jika ada data, program membuat tabel PrettyTable dengan kolom ID, Nama Konser, Tanggal, Lokasi, Harga, dan Kuota Tiket. Harga diformat dengan pemisah titik (contoh Rp150.000), dan kuota bernilai 0 ditampilkan sebagai SOLD OUT.
+
+## 5. Menu Registrasi
+
+<img width="831" height="403" alt="Screenshot 2026-11-03 164033" src="https://github.com/user-attachments/assets/da1eb40a-4482-41a5-96aa-3117325837f7" />
+
+<img width="773" height="346" alt="Screenshot 2026-11-03 164103" src="https://github.com/user-attachments/assets/1e83d610-c2e6-4161-b391-fbecbbcf1134" />
+
+Fungsi registrasi() dijalankan ketika pengguna memilih 2 opsi pada menu utama. Program membaca admin.json dan user.json. Pengguna diminta memasukkan username, program menolak jika kosong atau kurang dari 8 karakter. Selanjutnya pengguna memasukkan password (disembunyikan dengan pwinput) dalam perulangan while True sampai valid tidak boleh kosong, tidak boleh mengandunf spasi, dan harus lolos validasi_password(). Setelah itu program memeriksa apakah username sudah dipakai oleh akun admin maupun user. Jika belum, program membuat akun baru berisi username, password, role = "user", dan saldo = 0, menyimpannya ke user.json, lalu menampilkan "Selamat, Registrasi berhasil!".
+
+## 6. Menu Login
+
+<img width="787" height="389" alt="Screenshot 2026-11-03 164802" src="https://github.com/user-attachments/assets/703d067c-04c8-49b8-9668-ca446fd2052a" />
+
+Fungsi login() dijalankan ketika pengguna memilih opsi 1 pada menu utama. Pengguna memasukkan username dan password (disembunyikan dengan pwinput). Program mencocokkan data terlebih dahulu dengan daftar admin di admin.json, jika cocok, menampilkan "Login user berhasil!" dan menjalankan menu_user(username). Jika tidak ada yang cocok, program menampilkan "Username atau password salah!".
+
+## 7. Fungsi Tambah Tiket
+
+<img width="764" height="406" alt="Screenshot 2026-11-03 165146" src="https://github.com/user-attachments/assets/b098597c-3c30-47f4-8d49-58460512f766" />
+
+<img width="750" height="331" alt="Screenshot 2026-11-03 165205" src="https://github.com/user-attachments/assets/88f2cb0c-4573-404a-9b20-5d11c84d1105" />
+
+Fungsi tambah_tiket() meminta admin memasukkan nama konser, tanggal, lokasi, harga, dan kuota. Nama, tanggal, dan lokasi tidak boleh kosong. Harga dan kuota harus berupa angka (dicek dengan try-except ValueError) dan tidak boleh negatif. ID tiket dibuat otomatis, program mencariangka ID terbesar yang sudah ada lalu menambahkannya 1, dengan format T001, T002, dan seterusnya. Tiket baru ditambahkan ke list, disimpan ke tiket.json, dan program menampilkan "Tiket berhasil ditambahkan!".
+
+## 8. Fungsi Ubah Tiket
+
+<img width="829" height="391" alt="Screenshot 2026-11-03 165948" src="https://github.com/user-attachments/assets/f74c3cdb-3a2c-4953-a428-5d929b488873" />
+
+<img width="797" height="375" alt="Screenshot 2026-11-03 170018" src="https://github.com/user-attachments/assets/e101f53b-8b8d-41ed-88af-00c3411726eb" />
+
+Fungsi ubah_tiket() menampilkan daftar tiket lalu meminta admin memasukkan nomor ID (angka saja, misalnya 1 untuk T001), yang diubah program menjadi format T001. Jika ID ditemukan, data lama ditampilkan di dalam tanda kurung siku dan admin dapat mengisi data baru atau menekan Enter untuk mempertahankan data lama. Harga dan kuota divalidasi harus angka dan tidak negatif. Setelah itu data diperbarui, disimpan ke tiket.json, dan muncul "Data tiket berhasil diubah". Jika ID tidak ada, muncul "ID tiket tidak ditemukan!".
+
+## 9. Fungsi Hapus Tiket
+
+<img width="745" height="246" alt="Screenshot 2026-11-03 170543" src="https://github.com/user-attachments/assets/97732fcd-4a4b-42ac-8cab-e7863e18ab5c" />
+
+<img width="723" height="202" alt="Screenshot 2026-11-03 170607" src="https://github.com/user-attachments/assets/981c5b34-3aa0-446f-b92e-cb37bebb2bac" />
+
+Fungsi hapus_tiket() menampilkan daftar tiket dan meminta nomor ID tiket yang ingin dihapus. Jika ditemukan, program meminta konfirmasi (y/n). Jika admin memilih y, tiket dihapus dari list, file tiket.json diperbarui, dan muncul "Tiket berhasil dihapus!". Jika memilih n, penghapusan dibatalkan. Jika ID tidak ada, muncul "ID tiket tidak ditemukan!".
+
+## 10. Fungsi Cek Saldo dan Ambil Saldo
+
+<img width="622" height="188" alt="Screenshot 2026-11-03 171050" src="https://github.com/user-attachments/assets/40b4ebb4-3b41-4578-85a0-7c6b0b6844f6" />
+
+Fungsi ambil_saldo(username) mencari akun di user.json dan mengembalikan nilai saldonya (0 jika tidak ditemukan). Fungsi ini dipakai untuk menampilkan saldo terbaru pada header Menu User. Fungsi cek_saldo(username) memiliki cara kerja serupa, tetapi langsung mencetak saldo dengan format rupiah.
+
+## 11. Fungsi Top Up
+
+<img width="790" height="362" alt="Screenshot 2026-11-03 172255" src="https://github.com/user-attachments/assets/9749bdec-6b3e-4899-97f7-3a864ddcc552" />
+
+Fungsi top_up(username) meminta user memasukkan nominal. Nominal harus berupa angka dan lebih dari 0, jika tidak, muncul pesan kesalahan. Jika valid, program mencari akun user, menambahkan nominal ke saldo, menyimpan ke user.json, lalu menampilkan "Top up berhasil!" beserta saldo terbaru.
+
+## 12. Fungsi Cetak Invoice
+
+<img width="674" height="173" alt="Screenshot 2026-11-03 172727" src="https://github.com/user-attachments/assets/d22435b5-396a-4926-b666-a06669bf0797" />
+
+Fungsi cetak_invoice(transaksi) menampilkan struk pembelian berisi No Invoice, waktu, pembeli, konser, jumlah dan harga satuan, total, serta sisa saldo. Fungsi ini dipanggil otomatis setelah pembelian berhasil.
+
+## 13. Fungsi Beli Tiket
+
+<img width="797" height="405" alt="Screenshot 2026-11-03 172816" src="https://github.com/user-attachments/assets/30ba6417-b69d-4783-a796-fe2588cfabce" />
+
+<img width="779" height="387" alt="Screenshot 2026-11-03 172856" src="https://github.com/user-attachments/assets/2818ed25-ac03-4638-a239-cc2377bdf827" />
+
+<img width="802" height="363" alt="Screenshot 2026-11-03 173003" src="https://github.com/user-attachments/assets/507cdf34-b2a0-418d-abac-70dae55e218a" />
+
+<img width="731" height="44" alt="Screenshot 2026-11-03 173018" src="https://github.com/user-attachments/assets/e2632e5f-624d-4597-ba6b-2de845804de4" />
+
+Fungsi beli_tiket(username) menampilkan daftar tiket, lalu meminta ID tiket dan jumlah yang ingin dibeli. Program melakukan pengecekan secara berurutan, jumlah harus lebih dari 0 dan tidak melebihi MAKS_BELI (4), ID tiket harus ada, kuota tidak boleh 0 (SOLD OUT), kuota harus cukup untuk jumlah yang dibeli, dan saldo harus cukup untuk total harga. Jika semua terpenuhi, program menampilkan total harga dan meminta konfirmasi (y/n). Setelah dikonfirmasi, kuota tiket dan saldo user dikurangin, lalu transaksi baru dibuat berisi nomor invoice (INV0001, dst.), ID  tiket, status "Berhasil", waktu, username, nama konser, jumlah, harga, total dan sisa saldo. Data tiket, user, dan transaksi disimpan ke masing masing file JSON, lalu program menampilkan "Pembelian berhasil!" dan mencetak invoice.
+
+## 14. Fungsi Riwayat Transaksi
+
+<img width="833" height="402" alt="Screenshot 2026-11-03 174204" src="https://github.com/user-attachments/assets/ff5acbf6-1fb7-41f6-bada-74e99ae4bd4a" />
+
+<img width="748" height="41" alt="Screenshot 2026-11-03 174220" src="https://github.com/user-attachments/assets/c4e4ce4e-bca6-417f-a709-7c98ae8a601d" />
+
+Fungsi riwayat_transaksi(username) membaca transaksi.json lalu menyaring hanya transaksi milik user yang sedang login. Jika belum ada, menampilkan pesan "Belum ada transaksi". Jika ada, data ditampilkan dalam tabel berisi No invoice, waktu, konser, jumlah, total, dan status (Berhasil atau Refund).
+
+## 15. Fungsi Laporan Penjualan
+
+
+Fungsi laporan_penjualan() membaca transaksi.json. Transaksi berstatus Refund tidak dihitung sebagai penjualan, tetapi nilai sanksinya dijumlahkan ke total_sanksi. Untuk transaksi lainnya, program mengelompokkan data per nama konser dalam dictionary per_konser (jumlah tiket terjual dan pendapatan) sambil menghitung total transaksi, total tiket, dan total pendapatan. Hasilnya ditampilkan dalam tabel (Nama Konser, Tiket Terjual, Pendapatan) diikuti ringkasan total transaksi, total tiket, sanksi refund, dan total pendapatan (pendapatan penjualan ditambah sanksi refund).
